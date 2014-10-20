@@ -15,6 +15,11 @@ class Machine
 
     public function getTax($inkomen, $studiekosten, $giften, $ziektekosten, $koopwoning)
     {
+        $result = array();
+        if(!is_numeric($inkomen)){
+            header('HTTP/1.1 500 Internal Server Error');
+            return array("error" => "Geen gelding inkomen");
+        }
         if ($inkomen > 0 && $inkomen <= 19645) {
             $this->schijf = "Schijf 1";
             $this->tax = (($inkomen / 100) * 36.25);
@@ -33,13 +38,14 @@ class Machine
         $this->checkZiektekosten($ziektekosten);
         $this->checkKoopwoning($koopwoning);
 
+        $result['schijf'] = $this->schijf;
         if ($this->total < $this->tax){
-            return ($this->tax - $this->total);
+           $result['total'] = $this->tax - $this->total;
         } else {
-            return 0;
+            $result['total'] = 0;
         }
 
-
+        return $result;
     }
 
     private function checkStudiekosten($studiekosten)

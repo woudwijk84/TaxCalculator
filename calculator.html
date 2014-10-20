@@ -32,10 +32,10 @@
                 <td><input class="inputFld" type="number" name="koopwoning"></td>
             </tr>
         </table>
-        <input type="submit" value="Berekenen">
+        <input class="btn-primary" type="submit" value="Berekenen">
     </ng-form>
     <div class="error">{{status}}</div>
-    <div ng-show="total">
+    <div ng-show="checked">
         Uw Inkomsten wordt berekend in {{schijf}}<br />
         De voorlopige belastingteruggave: {{total}}<br />
     </div>
