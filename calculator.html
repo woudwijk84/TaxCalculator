@@ -11,25 +11,25 @@
 <body >
 <div>
     <ng-form ng-submit="calcutateTax()">
-        Belastbaar inkomen: <input class="inputFld" type="number" name="inkomen" required><br>
+        Belastbaar inkomen: <input class="inputFld" type="number" name="inkomen" required min="0"><br>
         <br>
         <strong>Aftrekposten:</strong> <br>
         <table>
             <tr>
                 <td>Studiekosten:</td>
-                <td><input class="inputFld" type="number" name="studiekosten"></td>
+                <td><input class="inputFld" type="number" name="studiekosten" min="0"></td>
             </tr>
             <tr>
                 <td> Giften:</td>
-                <td><input class="inputFld" type="number" name="giften"></td>
+                <td><input class="inputFld" type="number" name="giften" min="0"></td>
             </tr>
             <tr>
                 <td> Ziektekosten:</td>
-                <td><input class="inputFld" type="number" name="ziektekosten"></td>
+                <td><input class="inputFld" type="number" name="ziektekosten" min="0"></td>
             </tr>
             <tr>
                 <td>Koopwoning:</td>
-                <td><input class="inputFld" type="number" name="koopwoning"></td>
+                <td><input class="inputFld" type="number" name="koopwoning" min="0"></td>
             </tr>
         </table>
         <input class="btn-primary" type="submit" value="Berekenen">

@@ -6,9 +6,11 @@
  * Date: 15-10-2014
  * Time: 12:38
  */
+
+namespace Calculator;
+
 class Machine
 {
-
     public $schijf;
     public $tax;
     public $total;
@@ -18,7 +20,7 @@ class Machine
         $result = array();
         if(!is_numeric($inkomen)){
             header('HTTP/1.1 500 Internal Server Error');
-            return array("error" => "Geen gelding inkomen");
+            return array("error" => "Geen geldig inkomen");
         }
         if ($inkomen > 0 && $inkomen <= 19645) {
             $this->schijf = "Schijf 1";
