@@ -13,13 +13,11 @@ $machine = new Calculator\Machine();
 
 $firephp = FirePHP::getInstance(true);
 
-$firephp->log('starting machine');
+$firephp->log($machine);
 
-//TODO implement actionhandler for button
-if(isset($_GET['inkomen']) && isset($_GET['studiekosten'])
-    && isset($_GET['giften']) && isset($_GET['ziektekosten'])
-    && isset($_GET['koopwoning']))
+if(isset($_GET['inkomen']))
 {
+
     echo json_encode($machine->getTax($_GET['inkomen'],$_GET['studiekosten'],
         $_GET['giften'],$_GET['ziektekosten'],$_GET['koopwoning']));
 } else {

@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body >
-<div>
+<div ng-controller="MainCtrl">
     <ng-form ng-submit="calcutateTax()">
         Belastbaar inkomen: <input class="inputFld" type="number" name="inkomen" required min="0"><br>
         <br>
@@ -17,27 +17,27 @@
         <table>
             <tr>
                 <td>Studiekosten:</td>
-                <td><input class="inputFld" type="number" name="studiekosten" min="0"></td>
+                <td><input class="inputFld" type="number" name="studiekosten" required min="0"></td>
             </tr>
             <tr>
                 <td> Giften:</td>
-                <td><input class="inputFld" type="number" name="giften" min="0"></td>
+                <td><input class="inputFld" type="number" name="giften" required min="0"></td>
             </tr>
             <tr>
                 <td> Ziektekosten:</td>
-                <td><input class="inputFld" type="number" name="ziektekosten" min="0"></td>
+                <td><input class="inputFld" type="number" name="ziektekosten" required min="0"></td>
             </tr>
             <tr>
                 <td>Koopwoning:</td>
-                <td><input class="inputFld" type="number" name="koopwoning" min="0"></td>
+                <td><input class="inputFld" type="number" name="koopwoning" required min="0"></td>
             </tr>
         </table>
         <input class="btn-primary" type="submit" value="Berekenen">
     </ng-form>
     <div class="error">{{status}}</div>
-    <div ng-show="checked">
+    <div ng-show=checked>
         Uw Inkomsten wordt berekend in {{schijf}}<br />
-        De voorlopige belastingteruggave: {{total}}<br />
+        De voorlopige belastingteruggave: {{totalTax}}<br />
     </div>
 </div>
 
