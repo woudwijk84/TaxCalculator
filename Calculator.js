@@ -29,7 +29,7 @@ app.factory('dataFactory', ['$http', function ($http) {
     };
     return dataFactory;
 }])
-    .controller('MainCtrl', ['$scope', 'dataFactory', function ($scope, dataFactory) {
+    .controller('MainCtrl', ['$scope', 'dataFactory', '$log', function ($scope, dataFactory, $log) {
         $scope.totalTax;
         $scope.inkomen;
         $scope.studiekosten;
@@ -39,19 +39,21 @@ app.factory('dataFactory', ['$http', function ($http) {
         $scope.schijf;
         $scope.tax;
         $scope.status;
+        //$scope.$log = $log;
+
         $scope.checked = false;
         getMachine();
         $scope.calculateTax = function () {
-            dataFactory.calculateTax($scope.inkomsten, $scope.ziektekosten,
+            dataFactory.calculateTax($scope.inkomen, $scope.ziektekosten,
                 $scope.giften, $scope.studiekosten, $scope.koopwoning, $scope.schijf)
                 .success(function (result) {
-                    $scope.inkomsten = result.inkomsten;
-                    $scope.ziektekosten = result.ziektekosten;
-                    $scope.giften = result.giften;
-                    $scope.studiekosten = result.studiekosten;
-                    $scope.koopwoning = result.koopwoning;
+                    //$scope.inkomen = result.inkomen;
+                    //$scope.ziektekosten = result.ziektekosten;
+                    //$scope.studiekosten = result.studiekosten;
+                    //$scope.koopwoning = result.koopwoning;
+                    //$scope.giften = result.giften;
                     $scope.schijf = result.schijf;
-                    $scope.totalTax = result.totalTax;
+                    $scope.totalTax = result.total;
                     $scope.status = "";
                     $scope.checked = true;
                 })

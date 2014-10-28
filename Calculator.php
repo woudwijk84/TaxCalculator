@@ -13,9 +13,11 @@ $machine = new Calculator\Machine();
 
 $firephp = FirePHP::getInstance(true);
 
-$firephp->log($machine);
+//$firephp->log($machine);
 
-if(isset($_GET['inkomen']))
+if(isset($_GET['inkomen']) && isset($_GET['studiekosten'])
+    && isset($_GET['giften']) && isset($_GET['ziektekosten'])
+    && isset($_GET['koopwoning']))
 {
 
     echo json_encode($machine->getTax($_GET['inkomen'],$_GET['studiekosten'],
