@@ -47,11 +47,6 @@ app.factory('dataFactory', ['$http', function ($http) {
             dataFactory.calculateTax($scope.inkomen, $scope.ziektekosten,
                 $scope.giften, $scope.studiekosten, $scope.koopwoning, $scope.schijf)
                 .success(function (result) {
-                    //$scope.inkomen = result.inkomen;
-                    //$scope.ziektekosten = result.ziektekosten;
-                    //$scope.studiekosten = result.studiekosten;
-                    //$scope.koopwoning = result.koopwoning;
-                    //$scope.giften = result.giften;
                     $scope.schijf = result.schijf;
                     $scope.totalTax = result.total;
                     $scope.status = "";

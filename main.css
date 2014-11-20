@@ -96,9 +96,42 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+html{
+    background-color: #999999;
+}
+body{
+    width: 320px;
+    margin: 0px auto;
+    margin-top: 50px;
+    padding: 25px;
+    background-color: #e0e0e0;
+    border-color: #222;
+    border-radius: 12px;
+    box-shadow: 10px 10px 5px #888888;
+}
+.result {
+    padding:10px;
+    border:2px solid black;
+    border-radius: 2px;
+    background:white;
 
+}
+.btn-primary{
+    font-size: medium;
+    padding: 5px;
+    margin: 2px;
+    background-color: #93C763;
+    border-radius: 2px;
+    border: transparent 1px;
+}
+.result {
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+}
 
-
+.result.ng-hide {
+    opacity:0;
+}
 
 
 
